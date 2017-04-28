@@ -22,6 +22,7 @@ validation_target = validation_set((USER_COUNT+1),:);
 
 network_size = [USER_COUNT floor(USER_COUNT / 2) floor(USER_COUNT / 2)];
 
+% Example network.
 test_lm = feedforwardnet(network_size, 'trainlm');
 [test_lm, test_lm_record] = train(test_lm, training_input, training_target);
 fprintf('%s LM Training MSE: %f.\n', network_size, test_lm_record.best_perf);
